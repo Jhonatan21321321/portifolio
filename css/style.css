@@ -1,0 +1,11 @@
+/*cleancss -o css/style.min.css css/style.css --with-rebase*/
+@import './animacao.css';
+@import './global.css';
+@import './header.css';
+@import './introducao.css';
+@import './experiencia.css';
+@import './formacao.css';
+@import './bubble.css';
+@import './footer.css';
+@import './buttonDownload.css';
+/* cleancss -o css/style.min.css css/style.css --with-rebase */

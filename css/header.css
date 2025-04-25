@@ -1,0 +1,130 @@
+.header{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--fundo-1);
+}
+.logo{
+  width: 150px;
+  height: 38px;
+  background: var(--logo);
+}
+.header-menu{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.header-menu a{
+  font-size: 1.125rem;
+  line-height: 1.3;
+  padding: 10px 20px;
+  color: var(--fonte-cor-1);
+  display: block;
+  background: var(--fundo-3);
+  border-radius: .3rem;
+  filter: drop-shadow(0px 4px 1px var(--cor-primeira));
+  transition: .3s;
+}
+.header-menu a:hover{
+  color: var(--cor-primeira);
+  filter: drop-shadow(0px 4px 1px var(--cor-segunda));
+}
+
+.menu-geral{
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 2fr 50px;
+  margin-right: 10px;
+}
+.modo-tela{
+  margin-top: 10px;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.label {
+  background-color: #111;
+  border: 1px solid var(--cor-segunda);
+  transition: .3s;
+  filter: drop-shadow(0px 2px 1px var(--cor-primeira));
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 15px;
+  width: 40px;
+  transform: scale(1.5);
+}
+.label:hover{
+  filter: drop-shadow(0px 2px 1px var(--cor-terceira));
+}
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+.fa-moon {
+  color: #f1c40f;
+}
+.fa-sun {
+  color: #f39c12;
+}
+@media (max-width: 800px) {
+  .header{
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+  }
+  .header-menu a{
+    padding: 10px 10px;
+    font-size: 1rem;
+  }
+  .logo{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .menu-geral{
+    margin-right: 20px !important;
+  }
+}
+@media (max-width: 450px){
+  .menu-geral{ 
+  grid-template-columns: 1fr;
+  margin-right: 0px !important;
+  padding-bottom: 20px;
+  }
+  .modo-tela{
+    justify-self: end;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .header-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 350px){
+  .header-menu a{
+    padding: 10px 5px;
+  }
+}

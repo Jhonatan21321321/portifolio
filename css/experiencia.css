@@ -1,0 +1,211 @@
+.experiencia{
+  max-width: 1199.9px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  gap: 100px;
+  background-color: var(--fundo-1);
+  color: var(--fonte-cor-1);
+}
+.experiencia .subtitulo{
+  color: #e0e0e0;
+}
+.experiencia-texto{
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 50ch;
+  margin-bottom: 60px;
+  color: var(--fonte-cor-2);
+}
+.experiencia-texto strong{
+  color: var(--fonte-cor-3);
+}
+.empresa{
+  display: grid;
+  gap: 10px 20px;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  background: var(--fundo-3);
+  position: relative;
+  transition: 1s;
+}
+.empresa + .empresa{
+  margin-top: 20px;
+}
+.empresa::before{
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(var(--cor-segunda),var(--cor-primeira));
+  position: absolute;
+  top: 20px;
+  left: -4px;
+}
+.empresa:hover::before{
+  background: linear-gradient(var(--cor-primeira),var(--cor-terceira));
+}
+.empresa-ano{
+  position: absolute;
+  top: 22px;
+  left: -100px;
+  color: var(--fonte-cor-2);
+  font-size: 0.875rem;
+  width: 80px;
+  text-align: right;
+}
+.empresa-titulo{
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: bold;
+  text-align: center;
+}
+.empresa span{
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+.empresa-texto{
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--fonte-cor-2);
+}
+.empresa-habilidades{
+  display: flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  align-content: start;
+}
+.empresa-habilidades li{
+  font-size: 0.875rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: var(--fundo-1);
+  padding: 5px 10px;
+  color: var(--fonte-cor-1);
+}
+.empresa-links{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.empresa-links a{
+  margin-top: 3px;
+  padding: 5px 15px;
+  text-align: center;
+  position: relative;
+  color: var(--fonte-cor-2);
+}
+.empresa-links a:hover{
+  color: var(--cor-segunda);
+}
+.empresa-links a::before{
+  display: block;
+  content: '';
+  background: var(--icone-link);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -3px;
+  top: 6px;
+}
+.scroll-projetos{
+  height: 500px;
+  overflow-y: scroll;
+  padding-left: 50px;
+  border-top: 3px solid var(--fundo-4);
+  border-bottom: 3px solid var(--fundo-4);
+  border-radius: 5px;
+}
+.scroll-projetos::-webkit-scrollbar{
+  width: 15px;
+}
+.scroll-projetos::-webkit-scrollbar-thumb{
+  background-color: var(--cor-primeira);
+  border-left: 4px solid var(--fundo-3);
+  border-right: 4px solid var(--fundo-3);
+}
+.scroll-projetos::-webkit-scrollbar-track{
+  background-color: var(--fundo-3);
+}
+/* Video de Fundo do h2 */
+.container-subtitulo{
+  position: relative;
+}
+.banner{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 280px;
+  height: 90%;
+  object-fit: cover;
+}
+.banner h2{
+  position: absolute;
+  height: 91%;
+  top: 0;
+  left: 0;
+  background: var(--fundo-1);
+  color: var(--fundo-0) !important;
+  mix-blend-mode: var(--mix-blend-mode);
+}
+.banner-b h2{
+  background: #141414 !important;
+  color: #fff !important;
+  mix-blend-mode: darken;
+}
+.banner-b video{
+  max-width: 350px;
+}
+@media (max-width: 800px){
+  .container-subtitulo{
+    margin-bottom: 50px;
+  }
+  .banner{
+    height: 100vh;
+  }
+  .banner video{
+    display: none;
+  }
+  .banner h2{
+    height: auto;
+  }
+  .banner-b h2{ 
+    mix-blend-mode: normal;
+  }
+  .experiencia{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .experiencia .subtitulo{
+    color: #141414;
+  }
+  .experiencia-texto{
+    font-size: 1.25rem;
+  }
+  .empresa-ano{
+    position: initial;
+    order: 1;
+    width: initial;
+    text-align: left;
+  }
+  .empresa-ano::before{
+    content: "Ano: ";
+  }
+  .scroll-projetos{
+    padding-left: 0px;
+  }
+}
+@media (max-width: 400px){
+  .empresa{
+    grid-template-columns: 1fr;
+  }
+}

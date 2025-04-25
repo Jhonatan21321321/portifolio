@@ -1,0 +1,104 @@
+:root {
+  --cor-primeira: #f56260;
+  --cor-segunda: #ff817f;
+  --cor-terceira: #980bb4;
+  --fundo-0: #000000;
+  --fundo-1: #ffffff;
+  --fundo-2: #141414;
+  --fundo-3: #f5f5f5;
+  --fundo-4: #efefef;
+  --fonte-cor-1: #141414;
+  --fonte-cor-2: #525252;
+  --fonte-cor-3: #141414;
+  --icone-link: url("../img/link-preto.svg") no-repeat center center;
+  --logo: url("../img/marcaA.svg") no-repeat center center;
+  --mix-blend-mode: screen;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-0: #ffffff;
+    --fundo-1: #181a1b;
+    --fundo-2: #0f1011;
+    --fundo-3: #1e2021;
+    --fundo-4: #4d4d4d;
+    --fonte-cor-1: #cacaca;
+    --fonte-cor-2: #b4aea4;
+    --fonte-cor-3: #e8e6e3;
+    --icone-link: url("../img/link-branco.svg") no-repeat center center;
+    --logo: url("../img/marcaB.svg") no-repeat center center;
+    --mix-blend-mode: darken;
+  }
+}
+
+/*var(--fundo-1);*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  scroll-behavior: smooth;
+  background-color: var(--fundo-1);
+}
+body {
+  font-family: "Fira Sans", Arial, sans-serif;
+  color: #141414;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  font-family: "Fira Sans", Arial, sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+strong:hover {
+  color: #f8817f !important;
+}
+.subtitulo {
+  font-size: 8rem;
+  line-height: 1;
+  text-transform: uppercase;
+  word-break: break-all;
+  max-width: 4ch;
+}
+
+@media (max-width: 800px) {
+  img[src^="./img/marcaA"] {
+    margin-top: 30px;
+  }
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+    max-width: initial !important;
+  }
+}
+
+.footer,
+.experiencia {
+  overflow: hidden;
+}
+.js .js-scroll {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.3s;
+}
+.js .js-scroll.tipo2 {
+  transform: translate3d(0, 30px, 0);
+}
+.js .js-scroll.tipo3 {
+  transform: translate3d(30px, 0, 0);
+}
+.js .js-scroll.ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+@media (max-width: 600px) {
+  .js .footer-informacoes.js-scroll.tipo3 {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

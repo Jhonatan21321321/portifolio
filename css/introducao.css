@@ -1,0 +1,271 @@
+.introducao {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+  background-color: var(--fundo-1);
+  color: var(--fonte-cor-1);
+}
+.introducao img {
+  border-radius: 5%;
+  transition: 1s;
+}
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative;
+  font-family: "Playfair Display SC", gergia;
+  letter-spacing: 3px;
+}
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+.introducao p {
+  font-size: 1.5rem;
+  color: var(--fonte-cor-2);
+  padding-right: 20px;
+}
+.localizacaoPlaneta {
+  position: relative;
+}
+@keyframes seta {
+  from {
+    transform: translateY(-30%);
+  }
+}
+.emotePlaneta {
+  position: absolute;
+  animation: seta 0.5s ease-in 0s infinite alternate;
+}
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  .introducao h1::before {
+    width: 60px;
+    height: 10px;
+    left: 0px;
+    top:-25px
+  }
+}
+@media (max-width: 500px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+  .introducao h1 {
+    font-size: 1.8rem;
+  }
+  .localizacaoPlaneta{
+    font-size: 1.4rem !important;
+  }
+}
+
+/*---------- animação de slide ----------
+.slide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: var(--fundo-1);
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  border-radius: 20px;
+}
+.slide-track {
+  position: absolute;
+  animation: scroll 10s linear infinite;
+  display: flex;
+}
+.slide-track:hover {
+  animation-play-state: paused;
+}
+.slide {
+  height: 100px;
+  width: 140px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(calc(-140px * 10));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .slide-container {
+    padding: 20px 20px;
+  }
+}
+*/
+/*---------- Infinite Scrolling Animation ----------*/
+
+.container-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.scroll {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    #fff 20%,
+    #fff 80%,
+    transparent
+  ); /* Para compatibilidade com navegadores WebKit */
+}
+
+.scroll div,
+.scroll div:nth-child(2),
+.reverso div,
+.reverso div:nth-child(2) {
+  white-space: nowrap;
+  animation-duration: var(--t);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.scroll div {
+  animation-name: animate;
+  animation-delay: calc(var(--t) * -2);
+}
+.scroll div:nth-child(2) {
+  animation-name: animate2;
+  animation-delay: calc(var(--t) / -2);
+}
+.reverso div {
+  animation-name: animate-r;
+  animation-delay: calc(var(--t) * -2);
+}
+.reverso div:nth-child(2) {
+  animation-name: animate2-r;
+  animation-delay: calc(var(--t) / -2);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+@keyframes animate-r {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes animate2-r {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll div span {
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 10px 5px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transform: 0.5s;
+}
+.scroll div span:hover {
+  background-color: var(--cor-segunda);
+  cursor: pointer;
+}
+.adriwco {
+  background-color: var(--cor-primeira) !important;
+  color: #fff;
+}
+@media (max-width: 500px){
+  .container-scroll{
+    display: none;
+  }
+}
+/*
+.teste > div:first-child
+.teste > div:last-child
+/*
+CODIGO DO HTML SCROLL COM IMG
+
+  <section class="slide-container fadeInRight" data-anime="1400">
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-html.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-css.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-js.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-jquery.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-bootstrap.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-git.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-figma.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-vscode.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-discord.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-stackoverflow.svg" height="120" width="120" alt="" /></div>
+
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-html.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-css.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-js.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-jquery.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-bootstrap.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-git.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-figma.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-vscode.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-discord.svg" height="120" width="120" alt="" /></div>
+        <div class="slide"><img src="https://raw.githubusercontent.com/adriwco/projeto-portfolio/main/img/icones/tecnologia/icon-stackoverflow.svg" height="120" width="120" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+*/
