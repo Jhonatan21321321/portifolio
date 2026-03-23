@@ -392,8 +392,11 @@
   <section class="experiencia fadeInDown" data-anime="1400" id="experiencia" aria-label="Experiência">
  
     <div class="js-scroll tipo3" style="text-align: center;">
-      <p class="experiencia-texto ">Desenvolvo projetos como o Bikcraft utilizando apenas <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, além de aplicar noções sobre <strong>UX</strong> e <strong>UI</strong> design nos projetos.</p>
-
+<p class="experiencia-texto">
+Desenvolvo soluções tecnológicas focadas em <strong>automação de processos</strong>, 
+<strong>Business Intelligence</strong> e <strong>desenvolvimento web</strong>, utilizando 
+<strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>. Também aplico conceitos de <strong>UX/UI</strong>, análise de dados e integração com APIs para criar dashboards, sistemas operacionais e ferramentas estratégicas que apoiam a 
+<strong>tomada de decisão baseada em dados</strong>. </p>
   
  
 
@@ -403,6 +406,112 @@
         <h2 style="margin: 0;">Projetos</h2>
             <div class="scroll-projetos" style="width: 100%; height: 100%; overflow: auto;">
 
+
+  <!-- Superbet-->
+
+<div class="empresa">
+  <span class="empresa-ano">Superbet · 2023–atual</span>
+  <h3 class="empresa-titulo">
+    ETL Pipeline para Modelagem de Dados Conversacionais — Zendesk & Snowflake
+  </h3>
+  <p class="empresa-texto">
+    Desenvolvi pipelines de ingestão incremental conectando a API do Zendesk ao Snowflake,   extraindo audits e eventos de tickets de múltiplos canais (chat, social media, native messaging Web, Email). 
+    Modelei dados conversacionais em camadas bruto, tratado e analítico  com lógica de deduplicação, detecção de novos tickets vs. atualizações, retry automático em falhas de API e orquestração de scripts via subprocess. A solução alimenta dashboards de Customer Support 
+    Intelligence com visibilidade omnichannel para tomada de decisão em tempo D-1 . O diferencial está na camada de eventos cada ação dentro de um ticket mudança de status, atribuição de agente, comentário, 
+    resposta automática ou interação por canal.  é capturada individualmente como um evento rastreável, permitindo reconstruir a linha do tempo completa.A solução inclui lógica incremental inteligente (novo ticket vs. atualização vs. já sincronizado).
+  </p>
+  <div class="empresa-habilidades">
+    <li>Python ETL</li> <li>Snowflake</li> <li>Zendesk API</li>  <li>Data Pipeline</li>  <li>Omnichannel Analytics</li> <li>Business Intelligence</li>
+  </div>
+  <div class="empresa-links">
+    <a href="#" target="_blank">repository</a>
+    <a href="#" target="_blank">deploy</a>
+  </div>
+</div>
+
+
+  <div class="empresa">
+    <span class="empresa-ano">Superbet</span>
+    <h3 class="empresa-titulo"> Conector API PROCON Data Pipeline Automatizado API REST + Snowflake </h3>      
+    <p class="empresa-texto">
+     Desenvolvi pipeline de ingestão de protocolos regulatórios do PROCON via API Azure, com coleta mensal paginada desde 2025, deduplicação por protocolo, normalização de timestamps complexos via SQL e carga incremental no Snowflake usando staging table garantindo rastreabilidade e conformidade dos dados regulatórios. </p>
+    <div class="empresa-habilidades">
+<li>Python</li><li>Snowflake</li>
+<li>Azure API</li><li>ETL</li><li>Pandas</li>
+<li>Data Pipeline</li><li>Regulatory Data</li><li>Staging Table</li>     </div>
+    <div class="empresa-links">
+      <a href="https://github.com/adriwco/calculadora-imc" target="_blank">repository</a>
+      <a href="https://adriwco.github.io/calculadora-imc" target="_blank">deploy</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="empresa">
+    <span class="empresa-ano">Superbet</span>
+    <h3 class="empresa-titulo"> Automação - Conector Reclame Aqui + API HugMe com Carga Incremental </h3>      
+    <p class="empresa-texto">
+      Desenvolvi pipeline completo de ingestão de tickets do Reclame Aqui via API HugMe, com paginação automática, flatten de JSON aninhado, carga incremental no Snowflake e publicação automática no Google Sheets — com sistema de retry, auto-reinicialização por falha SSL/rede e controle de progresso persistido direto no Snowflake. </p>
+    <div class="empresa-habilidades">
+<li>Python</li><li>Snowflake</li><li>REST API</li><li>ETL</li>
+<li>Google Sheets API</li>
+<li>Pandas</li>
+<li>Data Pipeline</li>
+     </div>
+    <div class="empresa-links">
+      <a href="https://github.com/adriwco/calculadora-imc" target="_blank">repository</a>
+      <a href="https://adriwco.github.io/calculadora-imc" target="_blank">deploy</a>
+    </div>
+  </div>
+
+
+
+ 
+
+
+
+
+<div class="empresa">
+  <span class="empresa-ano">Superbet</span>
+  <h3 class="empresa-titulo">Extensão na WebStore - Timer Visual com Alerta para SLA em tempo real direto no Zendesk</h3>
+  <p class="empresa-texto">
+    Desenvolvi um UserScript que injeta um sistema de notificações e timer visual no Zendesk, com indicadores de cor progressivos (branco → amarelo → vermelho) baseados no tempo de espera do cliente, HUD flutuante e alertas no título da aba — zero latência, zero infraestrutura.
+  </p>
+  <div class="empresa-habilidades">
+    <li>JavaScript</li>
+    <li>UserScript</li>
+    <li>Zendesk API</li>
+    <li>DOM Manipulation</li>
+    <li>Chrome Extension</li>
+  </div>
+  <div class="empresa-links">
+    <a href="https://github.com/Jhonatan21321321/zendesk/main/zendesk-customer-notification.user.js" target="_blank">repository</a>
+  </div>
+</div>
+
+
+
+
+
+<div class="empresa">
+  <span class="empresa-ano">Superbet</span>
+  <h3 class="empresa-titulo"> Plataforma de Monitoramento em Tempo Real com ETL do Zendesk e Dashboards em Streamlit
+</h3>
+  <p class="empresa-texto">
+    Desenvolvi pipeline completo com integração à API do Zendesk, processamento automatizado em Python e dashboard interativo com métricas ao vivo, análise de sentimentos e visibilidade por agente, grupo e canal.
+  </p>
+  <div class="empresa-habilidades">
+    <li>Python</li>
+    <li>Zendesk API</li>
+    <li>Streamlit</li>
+    <li>DuckDB</li>
+  </div>
+  <div class="empresa-links">
+    <a href="https://github.com/adriwco/calculadora-imc" target="_blank">repository</a>
+    <a href="https://adriwco.github.io/calculadora-imc" target="_blank">deploy</a>
+  </div>
+</div>
 
 
 
